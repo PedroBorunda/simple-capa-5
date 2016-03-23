@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNet.Identity
+@Model ICollection<IssuesGithub.Models.ApplicationUser>
+@if (User.IsInRole("administrator"))
+{
+    <table id = "tbuser" class="table">
+        <tr>
+            <td class="c">
+                User Name
+            </td>
+        </tr>
+        <tr>
+            <td class="c">
+                Email
+            </td>
+        </tr>
+        <tr>
+            <td class="c">
+                Role
+            </td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="c">
+                    @item.UserName
+                </td>
+            </tr>
+            <tr>
+                <td class="c">
+                    @item.Email
+                </td>
+            </tr>
+            
+        }
+        </table>
+}
+else {
+
+}
